@@ -1,3 +1,3 @@
 # HashRainbow
 
-A description of this package.
+A tiny library for giving text color.
