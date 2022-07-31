@@ -2,9 +2,12 @@ import SwiftUI
 import CryptoKit
 
 private let DefaultNumberOfColors = 8
+
+// todo come up with some better color defaults
 public let GrayscaleColors = [Color.black, Color.gray, Color.white]
 public let RainbowColors = [Color.red, Color.orange, Color.yellow, Color.green, Color.blue, Color.purple]
 
+// todo add secondary colors to expand selection to # of colors
 private func generateColorArray(numColors: Int, colors: [Color]) -> [Color] {
     return GrayscaleColors
 }
