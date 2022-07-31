@@ -1,4 +1,5 @@
 import XCTest
+import UIKit
 @testable import HashRainbow
 
 final class HashRainbowTests: XCTestCase {
@@ -6,6 +7,6 @@ final class HashRainbowTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(HashRainbow().text, "Hello, World!")
+        XCTAssertEqual(HashRainbow.colorForString("e"), UIColor.black)
     }
 }
