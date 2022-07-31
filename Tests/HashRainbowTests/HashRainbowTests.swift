@@ -1,12 +1,25 @@
 import XCTest
-import UIKit
+import SwiftUI
 @testable import HashRainbow
 
 final class HashRainbowTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(HashRainbow.colorForString("e"), UIColor.black)
+    
+    func testHash() throws {
+        XCTAssertEqual(HashRainbow.hashValueFor("poop"), HashRainbow.hashValueFor("poop"))
+        XCTAssertEqual(HashRainbow.hashValueFor("bar"), HashRainbow.hashValueFor("bar"))
+        XCTAssertNotEqual(HashRainbow.hashValueFor("poop"), HashRainbow.hashValueFor("bar"))
+    }
+    
+    func testSanity() throws {
+        print(HashRainbow.hashValueFor("cheese"))
+        XCTAssertEqual(HashRainbow.colorForString("b"), Color.black)
+    }
+    
+    func testStability() throws {
+        XCTAssertEqual(HashRainbow.colorForString("contacted", colors: HashRainbow.RainbowColors), Color.blue)
+        XCTAssertEqual(HashRainbow.colorForString("seen", colors: HashRainbow.RainbowColors), Color.blue)
+        XCTAssertEqual(HashRainbow.colorForString("has fireplace", colors: HashRainbow.RainbowColors), Color.green)
+        XCTAssertEqual(HashRainbow.colorForString("bathtub", colors: HashRainbow.RainbowColors), Color.yellow)
+        XCTAssertEqual(HashRainbow.colorForString("gas", colors: HashRainbow.RainbowColors), Color.orange)
     }
 }
