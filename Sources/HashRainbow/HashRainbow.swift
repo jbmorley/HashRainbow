@@ -9,7 +9,7 @@ public let RainbowColors = [Color.red, Color.orange, Color.yellow, Color.green, 
 
 // todo add secondary colors to expand selection to # of colors
 private func generateColorArray(numColors: Int, colors: [Color]) -> [Color] {
-    return GrayscaleColors
+    return RainbowColors
 }
 
 func hashValueFor(_ text: String) -> UInt32 {
@@ -23,7 +23,7 @@ func hashValueFor(_ text: String) -> UInt32 {
 
 public func colorForString(_ text: String) -> Color {
     // generate color array based on inputs
-    let colorArray = generateColorArray(numColors: DefaultNumberOfColors, colors: GrayscaleColors)
+    let colorArray = generateColorArray(numColors: DefaultNumberOfColors, colors: RainbowColors)
     return colorForString(text, colors: colorArray)
 }
 

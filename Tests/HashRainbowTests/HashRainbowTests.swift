@@ -12,7 +12,11 @@ final class HashRainbowTests: XCTestCase {
     
     func testSanity() throws {
         print(HashRainbow.hashValueFor("cheese"))
-        XCTAssertEqual(HashRainbow.colorForString("b"), Color.black)
+        XCTAssertEqual(HashRainbow.colorForString("cheese"), Color.orange)
+    }
+    
+    func testGrayscale() throws {
+        XCTAssertEqual(HashRainbow.colorForString("b", colors: HashRainbow.GrayscaleColors), Color.black)
     }
     
     func testStability() throws {
